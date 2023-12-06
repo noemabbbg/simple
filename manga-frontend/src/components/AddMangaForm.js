@@ -1,12 +1,10 @@
-// Файл: src/components/AddMangaForm.tsx
-
-import React, { useState, FormEvent } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
-const AddMangaForm: React.FC = () => {
-    const [title, setTitle] = useState<string>('');
+function AddMangaForm() {
+    const [title, setTitle] = useState('');
 
-    const handleSubmit = async (e: FormEvent) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5000/manga', { title });
@@ -27,6 +25,6 @@ const AddMangaForm: React.FC = () => {
             <button type="submit">Добавить мангу</button>
         </form>
     );
-};
+}
 
 export default AddMangaForm;

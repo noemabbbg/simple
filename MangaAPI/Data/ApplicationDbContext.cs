@@ -1,5 +1,6 @@
 ﻿// Файл: Data/ApplicationDbContext.cs
 
+using MangaAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace MangaApi.Data
@@ -10,6 +11,8 @@ namespace MangaApi.Data
 
         public DbSet<Chapter> Chapters { get; set; }
         public DbSet<ChapterImage> ChapterImages { get; set; }
+        public DbSet<Manga> Mangas { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
